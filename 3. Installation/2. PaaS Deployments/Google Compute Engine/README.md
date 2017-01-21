@@ -14,7 +14,14 @@
 
    `sudo docker run --name rocketchat -p 80:3000 --env ROOT_URL=https://www.test.com --env MONGO_URL=mongodb://db/meteor --link db -d rocketchat/rocket.chat`
 
-   You are now runing rocket chat on compute engine. You can open a browser with the external IP of the instance.
+6. Enable 3000 port on Google Compute Engine's Firewall:
+   Click on top left menu -> Compute -> Networking -> Firewall Rules -> Create Firewall Rule
+   - Type a random name
+   - Source filter, Allow from Any Source
+   - Allowed protocols and ports, tcp: 3000; udp: 3000
+   - Create
+
+You are now runing rocket chat on compute engine. You can open a browser with the external IP of the instance.
 
 If you want the containers to start each time the instance reboots configure the following to the instance.
 
